@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smartino — Installazione firmware</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    h1 { font-size: 1.4rem; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+    .hint { color: #666; font-size: .9rem; }
+    a.dl { display: inline-block; margin: .25rem .5rem .25rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Smartino — installazione e aggiornamento firmware</h1>
+
+  <div class="card">
+    <h2>Primo flash (USB)</h2>
+    <p class="hint">Usa Chrome o Edge. Collega lo Smartino via USB, premi Connect, scegli la porta
+    seriale e poi Install. Se il chip contiene altro firmware, rispondi <b>sì</b> alla
+    cancellazione. Se il device non entra in modalità programmazione da solo, tieni premuto
+    BOOT mentre premi Install.</p>
+    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+  </div>
+
+  <div class="card">
+    <h2>Aggiornamento (OTA via pagina web dello Smartino)</h2>
+    <p class="hint">Scarica il file, poi apri la pagina web dello Smartino
+    (http://smartino-&lt;mac&gt;.local), menu OTA Update, e caricalo.</p>
+    <a class="dl" href="firmware.ota.bin" download>⬇ firmware.ota.bin</a>
+  </div>
+
+  <p class="hint">Dopo il primo flash: il LED lampeggia finché non è connesso a Home Assistant.
+  Con il cavo Ethernet attaccato si connette da solo; altrimenti usa la rete WiFi
+  "Smartino Setup" per inserire le credenziali. In Home Assistant il device appare come
+  "Smartino" — rinominalo liberamente ("Smartino caldaia", ...): la chiave di sicurezza
+  viene creata automaticamente da Home Assistant al primo collegamento.</p>
+</body>
+</html>

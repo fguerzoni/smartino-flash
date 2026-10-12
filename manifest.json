@@ -1,0 +1,11 @@
+{
+  "name": "Smartino",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [ { "offset": 0, "path": "firmware.factory.bin" } ]
+    }
+  ]
+}
